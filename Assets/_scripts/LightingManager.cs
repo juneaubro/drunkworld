@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class LightingManager : MonoBehaviour
     //Variables
     [SerializeField, Range(0, 24)]
     private float timeOfDay;
+    public Text clockText;
+    public Transform player;
 
     private void Update()
     {
@@ -19,9 +22,20 @@ public class LightingManager : MonoBehaviour
 
         if (Application.isPlaying)
         {
-            timeOfDay += Time.deltaTime;
+            if (player.position.y <= -500)
+            {
+                timeOfDay += Time.deltaTime * 1.5f;
+            }
+            else
+            {
+                timeOfDay += Time.deltaTime * 0.5f;
+            }
+            
             timeOfDay %= 24; //Clamp between 0-24
             UpdateLighting(timeOfDay / 24f);
+            string hour = LeadingZero((int)timeOfDay);
+            string minute = LeadingZero((int)((timeOfDay - (int)timeOfDay) * 60));
+            clockText.text = hour + ":" + minute;
         }
         else
         {
@@ -65,5 +79,10 @@ public class LightingManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    string LeadingZero (int n)
+    {
+        return n.ToString().PadLeft(2, '0');
     }
 }

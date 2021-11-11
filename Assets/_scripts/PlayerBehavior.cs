@@ -18,6 +18,9 @@ public class PlayerBehavior : MonoBehaviour
     public Vector3 velocity;
     public bool isGrounded;
 
+    public GameObject overworldSpawn;
+    public GameObject underworldSpawn;
+
     public Camera playerCamera;
     public LayerMask interactableMask;
     public GameObject interactUI;
@@ -56,55 +59,30 @@ public class PlayerBehavior : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        SelectObjectToInteractFromRay();
-
-        if (InteractableTargeted())
-        {
-            interactUI.gameObject.SetActive(true);
-
-            if (Input.GetButton("E"))
-            {
-
-            }
-        }
+        
 
     }
-
-    private void SelectObjectToInteractFromRay()
-    {
-        Ray ray = playerCamera.ViewportPointToRay(Vector3.one / 2f);
-        Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
-
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 2f, interactableMask))
-        {
-            Interactable hitObject = hit.collider.GetComponent<Interactable>();
-
-            if(hitObject == null)
-            {
-                interactableObject = null;
-            }
-            else if (hitObject != null && hitObject!= interactableObject)
-            {
-                interactableObject = hitObject;
-
-            }
-        }
-        else
-        {
-            interactableObject = null;
-        }
-    }
-
-    private bool InteractableTargeted()
-    {
-        return interactableObject != null;
-    }
-
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "OverworldBed")
+        {
+            Debug.Log("Found overworldBed");
+            controller.enabled = false;
+            transform.position = new Vector3(underworldSpawn.transform.position.x, underworldSpawn.transform.position.y, underworldSpawn.transform.position.z);
+            controller.enabled = true;
+        }
+        else if (other.gameObject.name == "UnderworldBed")
+        {
+            controller.enabled = false;
+            transform.position = new Vector3(overworldSpawn.transform.position.x, overworldSpawn.transform.position.y, overworldSpawn.transform.position.z);
+            controller.enabled = true;
+        }
     }
 }
