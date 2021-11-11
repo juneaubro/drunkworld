@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,12 @@ public class PlayerBehavior : MonoBehaviour
 
     public Vector3 velocity;
     public bool isGrounded;
+
+    public Camera playerCamera;
+    public LayerMask interactableMask;
+    public GameObject interactUI;
+
+    private Interactable interactableObject;
 
 
     // Start is called before the first frame update
@@ -48,7 +55,52 @@ public class PlayerBehavior : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        SelectObjectToInteractFromRay();
+
+        if (InteractableTargeted())
+        {
+            interactUI.gameObject.SetActive(true);
+
+            if (Input.GetButton("E"))
+            {
+
+            }
+        }
+
     }
+
+    private void SelectObjectToInteractFromRay()
+    {
+        Ray ray = playerCamera.ViewportPointToRay(Vector3.one / 2f);
+        Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 2f, interactableMask))
+        {
+            Interactable hitObject = hit.collider.GetComponent<Interactable>();
+
+            if(hitObject == null)
+            {
+                interactableObject = null;
+            }
+            else if (hitObject != null && hitObject!= interactableObject)
+            {
+                interactableObject = hitObject;
+
+            }
+        }
+        else
+        {
+            interactableObject = null;
+        }
+    }
+
+    private bool InteractableTargeted()
+    {
+        return interactableObject != null;
+    }
+
 
     void OnDrawGizmos()
     {
