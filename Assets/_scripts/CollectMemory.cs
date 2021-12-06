@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CollectMemory : MonoBehaviour
 {
-    //public AudioSource collectSound;
+    public AudioSource collectSound;
 
 
     public void OnTriggerEnter(Collider other)
     {
-        //collectSound.Play();
+        collectSound.Play();
         ScoringSystem.theScore += 1;
         Destroy(gameObject);
 

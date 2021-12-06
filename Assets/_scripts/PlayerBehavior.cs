@@ -25,6 +25,7 @@ public class PlayerBehavior : MonoBehaviour
     public LayerMask interactableMask;
     public GameObject interactUI;
 
+
     private Interactable interactableObject;
 
 
@@ -50,6 +51,7 @@ public class PlayerBehavior : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * maxSpeed * Time.deltaTime);
+        
 
         if (Input.GetButton("Jump") && isGrounded)
         {
@@ -59,7 +61,7 @@ public class PlayerBehavior : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        
+
 
     }
 

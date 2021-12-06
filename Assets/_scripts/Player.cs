@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private GameObject tree;
     private GameObject treeText;
     private bool hasKey;
+
+ 
     private void Start() {
         myAgent = GetComponent<NavMeshAgent>();
         overWorld = GameObject.Find("OverWorld");
