@@ -61,8 +61,6 @@ public class PlayerBehavior : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-
-
     }
 
     void OnDrawGizmos()
