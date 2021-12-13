@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Pause.GameIsPaused)
         {
             GameObject bulletObject = Instantiate(bulletPrefab);
             bulletObject.transform.position = playerCamera.transform.position + playerCamera.transform.forward;
