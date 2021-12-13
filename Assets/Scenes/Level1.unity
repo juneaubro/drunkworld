@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44535327, g: 0.489361, b: 0.5436174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44535273, g: 0.4893605, b: 0.5436163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1172,7 +1172,7 @@ AudioSource:
   m_GameObject: {fileID: 125471900}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b624fcc9b3f6e5d48b62eedff1170277, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5333097cb5e165642a69d6c88b08acb4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
-  deathCanvas: {fileID: 332683247}
+  healthBarCanvas: {fileID: 0}
 --- !u!1 &125953502
 GameObject:
   m_ObjectHideFlags: 0
