@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public const int maxHealth = 100;
     public int currentHealth = maxHealth;
     public GameObject healthBarCanvas;
+    
 
     private void Start()
     {
@@ -26,10 +27,10 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene("GameOVer");
         }
     }
-    public void GainHealth(int healthAmount)
+    public void GainHealth(int healAmount)
     {
-        currentHealth += healthAmount;
-        //healthBarCanvas.GetComponent<HealthBarScreenSpaceController>().GainHealth(healthAmount);
+        currentHealth += healAmount;
+        healthBarCanvas.GetComponent<HealthBarScreenSpaceController>().GainHealth(healAmount);
 
     }
 }

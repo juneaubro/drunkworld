@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Waypoint
   - Enemy
+  - Healthkit
   layers:
   - Default
   - TransparentFX
