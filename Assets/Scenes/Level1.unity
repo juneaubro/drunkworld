@@ -1168,7 +1168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
-  controller: {fileID: 125471903}
   deathCanvas: {fileID: 332683247}
 --- !u!1 &125953502
 GameObject:
@@ -2044,7 +2043,7 @@ GameObject:
   - component: {fileID: 733702433}
   m_Layer: 5
   m_Name: HealthBar-ScreenSpace
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

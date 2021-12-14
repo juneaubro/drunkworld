@@ -31,6 +31,7 @@ public class HealthBarScreenSpaceController : MonoBehaviour
     {
         healthBarSlider.value -= damage;
         currentHealth -= damage;
+        //SetHealth(currentHealth);
         if(currentHealth < 0)
         {
             healthBarSlider.value = 0;
