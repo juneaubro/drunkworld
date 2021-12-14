@@ -9,6 +9,7 @@ TagManager:
   - Waypoint
   - Enemy
   - Healthkit
+  - HealthBar
   layers:
   - Default
   - TransparentFX

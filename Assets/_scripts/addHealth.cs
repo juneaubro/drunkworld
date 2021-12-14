@@ -10,7 +10,7 @@ public class addHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerhealth = other.GetComponent<PlayerHealth>();
+            HealthBarScreenSpaceController playerhealth = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBarScreenSpaceController>();
             playerhealth.GainHealth(healAmount);
             Destroy(this.gameObject);
         }

@@ -24,10 +24,12 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            anim.SetBool("isDead", true);
             myAgent.isStopped = true;
             gameObject.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
-            
+            anim.SetBool("isDead", true);
+            anim.SetBool("isFollowing", false);
+            anim.SetBool("isAttacking", false);
+
             Debug.Log("Enemy " + this.gameObject.GetInstanceID() + " is dead!");
             Destroy(this.gameObject, timeToDestory);
         }

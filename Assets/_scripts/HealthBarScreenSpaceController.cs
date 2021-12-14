@@ -14,11 +14,16 @@ public class HealthBarScreenSpaceController : MonoBehaviour
 
     private Slider healthBarSlider;
 
+    public GameObject playerCamera;
+
+    public GameObject endMenuUI;
+
     // Start is called before the first frame update
     void Start()
     {
         healthBarSlider = GetComponent<Slider>();
         currentHealth = maximumHealth;
+        playerCamera = GameObject.Find("PlayerCamera");
     }
 
     // Update is called once per frame
@@ -33,8 +38,12 @@ public class HealthBarScreenSpaceController : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth < 0)
         {
+            endMenuUI.SetActive(true);
             healthBarSlider.value = 0;
             currentHealth = 0;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            playerCamera.GetComponent<CameraController>().enabled = false;
         }
     }
 
