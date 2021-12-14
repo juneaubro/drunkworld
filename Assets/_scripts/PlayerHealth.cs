@@ -26,4 +26,10 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene("GameOVer");
         }
     }
+    public void GainHealth(int healthAmount)
+    {
+        currentHealth += healthAmount;
+        //healthBarCanvas.GetComponent<HealthBarScreenSpaceController>().GainHealth(healthAmount);
+
+    }
 }

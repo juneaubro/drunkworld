@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent myAgent;
     public GameObject[] waypoints;
 
-    public float damageDelay = 3f;
+    public float damageDelay = 1f;
     private float damageTimer = 0f;
 
 
