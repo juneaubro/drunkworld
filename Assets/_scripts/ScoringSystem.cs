@@ -13,6 +13,6 @@ public class ScoringSystem : MonoBehaviour
     public void Update()
     {
         //theScore += 1;
-        scoreText.GetComponent<Text>().text = "Memories: " + theScore + "/8";
+        scoreText.GetComponent<Text>().text = "Memories: " + theScore;
     }
 }

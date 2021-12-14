@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44535327, g: 0.489361, b: 0.5436174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44535273, g: 0.4893605, b: 0.5436163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -454,11 +454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5809637497949663115, guid: 180992b70dfec8e40b10d0e3d6fb2ac7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.46
+      value: 24.14
       objectReference: {fileID: 0}
     - target: {fileID: 5809637497949663115, guid: 180992b70dfec8e40b10d0e3d6fb2ac7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 75.73
+      value: 56.06
       objectReference: {fileID: 0}
     - target: {fileID: 5809637497949663115, guid: 180992b70dfec8e40b10d0e3d6fb2ac7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -511,11 +511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ddbbcdccb4c9b5e4396203b293f11f00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.73
+      value: 79.64
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ddbbcdccb4c9b5e4396203b293f11f00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.41
+      value: 22.44
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ddbbcdccb4c9b5e4396203b293f11f00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -864,6 +864,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &740413434 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5809637497949663115, guid: 180992b70dfec8e40b10d0e3d6fb2ac7, type: 3}
+  m_PrefabInstance: {fileID: 340693232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &876654917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401186763}
   m_LocalRotation: {x: 0.011376112, y: 0.98767215, z: -0.13002947, w: 0.08641018}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 6.4, y: 140.5, z: -36.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2304,7 +2309,7 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: c22c552f65e504d48a12c5c1b3c1b6fa, type: 2}
   timeOfDay: 7
   clockText: {fileID: 1760466280}
-  player: {fileID: 0}
+  player: {fileID: 740413434}
 --- !u!4 &1633419796
 Transform:
   m_ObjectHideFlags: 0
